@@ -11,9 +11,6 @@ const Item = ({prod}) => {
             <div className="imagen">
                 <h5>{prod.img}</h5>
             </div>
-            <div>
-                <h5>${prod.precio}</h5>
-            </div>
             <button className="btn btn-warning">Ver descripción</button>
         </div>
         
