@@ -1,7 +1,7 @@
 const listadoProductos = [
     {
        id:"001",
-       nombre:"Balancin",
+       nombre:"Balancín",
        marca:"Juguetes Olsen",
        origen:"Argentina",
        material:"Madera",
