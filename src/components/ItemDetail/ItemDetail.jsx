@@ -1,25 +1,24 @@
 import React from 'react';
 import "./styles.css";
 
-export default function ItemDetail() {
-
+export default function ItemDetail({item}) {
 
   return (
         <div className="card">
             <div>
-               <h4>{prod.nombre}</h4>
-            </div>
-            <div className="imagen">
-                <h5>{prod.img}</h5>
-            </div>
-            <div className="imagen">
-                <h5>{prod.marca}</h5>
-            </div>
-            <div className="imagen">
-                <h5>{prod.origen}</h5>
+               <h4>{item.nombre}</h4>
             </div>
             <div>
-                <h5>${prod.precio}</h5>
+                <h5>{item.img}</h5>
+            </div>
+            <div>
+                <h5>{item.marca}</h5>
+            </div>
+            <div>
+                <h5>{item.origen}</h5>
+            </div>
+            <div>
+                <h5>${item.precio}</h5>
             </div>
 
         </div>
