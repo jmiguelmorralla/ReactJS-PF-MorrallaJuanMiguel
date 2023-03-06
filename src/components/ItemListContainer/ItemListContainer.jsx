@@ -1,39 +1,48 @@
 import React, { useState, useEffect} from 'react';
 import './styles.css';
-import { getFech } from '../../Mock';
+import listadoProductos, { getFech } from '../../Mock';
 import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router-dom';
 
+
+function getItemsByCategoryFromDatabase (categoryURL) {
+  return new Promise ((resolve, reject)=>{
+    setTimeout(()=>{
+      let productosFiltrados = listadoProductos.filter(item => item.category === categoryURL)
+      resolve(productosFiltrados)
+    }, 1000); 
+  });
+}
 
 const ItemListContainer = ()=>{
 
   const [productos, setProductos] = useState([])
-  const [loading, setLoading] = useState(true)
 
+
+  const params = useParams ();
+  const idCategory = params.idCategory;
+
+  async function leerDatos() {
+    if (idCategory === undefined) {
+      let respuesta = await listadoProductos; setProductos(respuesta);
+  } else {
+      let respuesta = await getItemsByCategoryFromDatabase(idCategory); setProductos(respuesta);
+  }
+}
 
   useEffect(()=>{
-    getFech
-    .then((respuesta) => setProductos(respuesta))
-    .catch(error => console.log(error))
-    .finally(()=>setLoading(false))
-  }, [])
+    leerDatos()
+  }, [idCategory])
 
   return (
   
     <div className=''>
-      {loading ? <h1>Cargando productos...</h1> : 
-      <h1>Catálogo de Productos</h1>}
+      
+      <h1>Catálogo de Productos</h1>
       <div className='container'>
         <ItemList Prod={productos} />
       </div>
-
-
-
-
-
     </div>
-
-
-
   )
 
 

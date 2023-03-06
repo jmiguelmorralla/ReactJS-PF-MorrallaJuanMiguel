@@ -12,8 +12,8 @@ function NavBar() {
       </Link>  
       </span>
       <li><Link to='/' className='link'>Inicio</Link></li>
-      <li><Link to='/filosofia' className='link'>Filosofía</Link></li>
-      <li><Link to='/materiales' className='link'>Materiales</Link></li>
+      <li><Link to='/category/motricidad-fina' className='link'>Motricidad Fina</Link></li>
+      <li><Link to='/category/motricidad-gruesa' className='link'>Motricidad Gruesa</Link></li>
       <li><Link to='/nosotros' className='link'>Nosotros</Link></li>
       <CartWidget className="cartWidget"/>
               

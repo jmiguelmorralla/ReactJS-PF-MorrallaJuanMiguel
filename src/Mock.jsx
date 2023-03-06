@@ -9,7 +9,7 @@ const listadoProductos = [
        precio:12000,
        disponibilidad:true,
        img: '/img/balancin.png',
-       category: "Motricidad gruesa"
+       category: "motricidad-gruesa"
     },
 
     {
@@ -22,7 +22,7 @@ const listadoProductos = [
        precio:7000,
        disponibilidad:true,
        img:"/img/arcoiris.png",
-       category: "Motricidad fina"
+       category: "motricidad-fina"
     },
     {
        id:3,
@@ -34,7 +34,7 @@ const listadoProductos = [
        precio:4500,
        disponibilidad:true,
        img:"/img/casita.png",
-       category: "Motricidad fina"
+       category: "motricidad-fina"
     },
     {
        id:4,
@@ -46,7 +46,7 @@ const listadoProductos = [
        precio:3000,
        disponibilidad:true,
        img:"/img/bloques.png",
-       category: "Motricidad fina"
+       category: "motricidad-fina"
     },
     {
        id:5,
@@ -58,7 +58,7 @@ const listadoProductos = [
        precio:2900,
        disponibilidad:true,
        img:"/img/torre.jpg",
-       category: "Motricidad gruesa"
+       category: "motricidad-gruesa"
     },
     {
        id:6,
@@ -70,23 +70,9 @@ const listadoProductos = [
        precio:5900,
        disponibilidad:true,
        img:"/img/luna.png",
-       category: "Motricidad fina"
+       category: "motricidad-fina"
     }
  ]
 
- export const getFech = new Promise((respuesta, reject) => {
-    let url = "www.vitonio.com.ar";
-
-    if (url === "www.vitonio.com.ar") {
-        setTimeout(()=> {
-            respuesta(listadoProductos)}, 
-            2000       
-        )
-    } else {
-        reject("Fallo de conexión.")
-    }
-
-
- })
 
  export default listadoProductos;
