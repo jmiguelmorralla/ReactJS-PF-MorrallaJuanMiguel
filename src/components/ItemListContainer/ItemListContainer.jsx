@@ -19,10 +19,10 @@ const ItemListContainer = ()=>{
 
   return (
   
-    <div className='container'>
+    <div className=''>
       {loading ? <h1>Cargando productos...</h1> : 
       <h1>Catálogo de Productos</h1>}
-      <div className='container contenedor'>
+      <div className='container'>
         <ItemList Prod={productos} />
       </div>
 

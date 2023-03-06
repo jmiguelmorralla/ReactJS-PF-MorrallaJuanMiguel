@@ -9,13 +9,13 @@ export default function ItemDetail({item}) {
                <h4>{item.nombre}</h4>
             </div>
             <div>
-                <h5>{item.img}</h5>
+                <img className="imagen-detail" src={item.img} />
             </div>
             <div>
-                <h5>{item.marca}</h5>
+                <h5>Marca: {item.marca}</h5>
             </div>
             <div>
-                <h5>{item.origen}</h5>
+                <h5>Origen: {item.origen}</h5>
             </div>
             <div>
                 <h5>${item.precio}</h5>

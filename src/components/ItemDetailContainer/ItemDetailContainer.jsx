@@ -16,7 +16,7 @@ useEffect (()=>{
     const promesaItem = new Promise((resolve, reject)=>{
         setTimeout(()=>{
             let encontrado = listadoProductos.find((item) => item.id === parseInt(idProduct)); resolve(encontrado);
-        }, 2000)
+        }, 1000)
     });
 
     promesaItem.then((respuesta)=>setItem(respuesta));
