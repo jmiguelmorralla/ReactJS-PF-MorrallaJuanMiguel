@@ -13,6 +13,7 @@
   margin-right: auto;
   margin-left: auto;
   display: flex;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 576px) {
@@ -40,13 +41,6 @@
     max-width: 1320px;
   }
 }
-
-.contenedor {
-    grid-template-columns: repeat(2, 2fr);
-    gap: 1rem;
-  
-  }
-
-  h1 {
+h1 {
     display: block;
   }
