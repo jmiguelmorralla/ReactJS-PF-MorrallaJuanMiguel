@@ -9,7 +9,8 @@ const listadoProductos = [
        precio:12000,
        disponibilidad:true,
        img: '/img/balancin.png',
-       category: "motricidad-gruesa"
+       category: "motricidad-gruesa",
+       stock: 12
     },
 
     {
@@ -22,7 +23,8 @@ const listadoProductos = [
        precio:7000,
        disponibilidad:true,
        img:"/img/arcoiris.png",
-       category: "motricidad-fina"
+       category: "motricidad-fina",
+       stock: 5
     },
     {
        id:3,
@@ -34,7 +36,8 @@ const listadoProductos = [
        precio:4500,
        disponibilidad:true,
        img:"/img/casita.png",
-       category: "motricidad-fina"
+       category: "motricidad-fina",
+       stock: 4
     },
     {
        id:4,
@@ -46,7 +49,8 @@ const listadoProductos = [
        precio:3000,
        disponibilidad:true,
        img:"/img/bloques.png",
-       category: "motricidad-fina"
+       category: "motricidad-fina",
+       stock: 15
     },
     {
        id:5,
@@ -58,7 +62,8 @@ const listadoProductos = [
        precio:2900,
        disponibilidad:true,
        img:"/img/torre.jpg",
-       category: "motricidad-gruesa"
+       category: "motricidad-gruesa",
+       stock: 1
     },
     {
        id:6,
@@ -70,7 +75,8 @@ const listadoProductos = [
        precio:5900,
        disponibilidad:true,
        img:"/img/luna.png",
-       category: "motricidad-fina"
+       category: "motricidad-fina",
+       stock: 3
     }
  ]
 

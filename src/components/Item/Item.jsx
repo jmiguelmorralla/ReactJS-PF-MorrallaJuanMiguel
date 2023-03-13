@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
 const Item = ({prod}) => {
     return(
@@ -13,7 +14,8 @@ const Item = ({prod}) => {
                 <img className="imagen-prod" src={prod.img}/>
             </div>
             <Link to={`/items/${prod.id}`}>                
-                <button className="btn btn-warning">Ver descripción</button>
+                <Button color={"blue"}>Ver descripción</Button>
+                {/* <button className="btn btn-warning">Ver descripción</button> */}
             </Link>
         </div>
         
