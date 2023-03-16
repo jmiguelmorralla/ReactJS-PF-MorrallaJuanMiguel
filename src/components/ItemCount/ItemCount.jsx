@@ -4,26 +4,29 @@ import Button from "../Button/Button";
 
 const ItemCount = ({inicial, stock, onAddToCart}) => {
   
-  const [count, setCount] = useState (inicial)  
+  let [count, setCount] = useState (inicial)  
 
   
-  const disminuir = () => {
-    if (count != inicial) {
-    setCount (count --)}
+  let disminuir = () => {
+    if (count > inicial) {
+  setCount (count --)
+  }
   };
   
-  const incrementar = () => {
+  let incrementar = () => {
   if (count < stock) {  
   setCount (count ++)}
 
+
+
 };
 
-
+console.log("valor "+count)
 return(
   <div className="adminCant">
     
     <Button color={"red"} onClickButton={disminuir}>-</Button>
-    <div id='contador'>{count}</div>
+    <span id='contador'>{count}</span>
     <Button color={"green"} onClickButton={incrementar}>+</Button>
     <Button color={"orange"} onClickButton={()=>onAddToCart(count)}>Agregar al carrito</Button>
   </div> 
