@@ -1,13 +1,21 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 const cartContext = createContext({
     cart: []
 });
 
 function CartContextProvider(props) {
-    const cart = [{id:1}, {id:1}];
+    const  [cart, setCart] = useState([]);
+
+    function addItem() {
+        
+    }
+
+
     return (
-    <cartContext.Provider value={cart}>{props.children}</cartContext.Provider>
+        <cartContext.Provider value={{cart: cart}}>
+            {props.children}
+        </cartContext.Provider>
     )
 }
 
@@ -16,5 +24,5 @@ function CartContextProvider(props) {
 
 
 
-export { CartContextProvider }
+export { CartContextProvider };
 export default cartContext;

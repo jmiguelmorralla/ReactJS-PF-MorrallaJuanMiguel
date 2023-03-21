@@ -2,6 +2,7 @@ import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import "./styles.css";
 
+
 export default function ItemDetail({item}) {
 
 

@@ -5,12 +5,13 @@ import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import listadoProductos from "../../Mock";
 
+
 export default function ItemDetailContainer() {
 
 const [item, setItem] = useState([])
 
 const params = useParams()
-const idProduct = params.idProducto
+const idProduct = params.idProducto;
 
 useEffect (()=>{
     const promesaItem = new Promise((resolve, reject)=>{
