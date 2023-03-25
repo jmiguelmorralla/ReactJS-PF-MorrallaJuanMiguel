@@ -10,7 +10,8 @@ const listadoProductos = [
        disponibilidad:true,
        img: '/img/balancin.png',
        category: "motricidad-gruesa",
-       stock: 12
+       stock: 12,
+       oferta: 20
     },
 
     {
@@ -50,7 +51,8 @@ const listadoProductos = [
        disponibilidad:true,
        img:"/img/bloques.png",
        category: "motricidad-fina",
-       stock: 15
+       stock: 15,
+       oferta: 30
     },
     {
        id:5,
@@ -63,7 +65,8 @@ const listadoProductos = [
        disponibilidad:true,
        img:"/img/torre.jpg",
        category: "motricidad-gruesa",
-       stock: 1
+       stock: 1,
+       oferta: 20
     },
     {
        id:6,

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import './styles.css';
 import { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-
 import listadoProductos from "../../Mock";
 import ItemCount from '../ItemCount/ItemCount';
 import cartContext from '../../context/cartContext'
@@ -39,13 +38,23 @@ useEffect (()=>{
 
 }, []);
 
+const precioOferta = ((100-item.oferta)*item.precio/100)
+
+
 if (item.nombre === undefined) return <Loader />;
 
   return (
     <div className="container">
         <div className="card">
-            <div>
-               <h4>{item.nombre}</h4>
+            <div className='container-card'>
+                <div>
+                    <h4>{item.nombre}</h4>
+                </div>
+                    <div>
+                        {item.oferta && (
+                        <div className="oferta">¡En oferta!</div>
+                        )}
+                    </div>
             </div>
             <div>
                 <img className="imagen-detail" src={item.img} />
@@ -57,7 +66,12 @@ if (item.nombre === undefined) return <Loader />;
                 <h5>Origen: {item.origen}</h5>
             </div>
             <div>
-                <h5>${item.precio}</h5>
+                {item.oferta? (
+                        <div> <h5 className='precio-tachado'>${item.precio}</h5>
+                        <h3 className='precio-oferta'>${precioOferta}</h3>
+                        </div>
+                        ) : <h5>${item.precio}</h5>}
+                
             </div>
             <ItemCount onAddToCart={onAddToCart} inicial={1} stock={item.stock} />
             

@@ -71,5 +71,20 @@
     display: inline-block;
     }
 
+.oferta {
+  color: rgb(255, 98, 0);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-radius: 30%;
+  border-style:double;
+  display: inline-block;
+  padding: .2rem;
+
+}
+
+.container-card {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 

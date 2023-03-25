@@ -54,3 +54,31 @@
 max-height: 300px;
 max-width: 300px;
 }
+
+.oferta {
+  color: rgb(255, 98, 0);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-radius: 30%;
+  border-style:double;
+  display: inline-block;
+  padding: .2rem;
+
+}
+
+.container-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.precio-tachado {
+  text-decoration: line-through ;
+}
+
+.precio-oferta {
+  color: rgb(255, 98, 0);
+  border-radius: 30%;
+  border-style:double;
+  display: inline-block;
+  padding: .2rem;
+  margin-top: 0;
+}
