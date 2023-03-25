@@ -3,6 +3,7 @@ import './styles.css';
 import listadoProductos, { getFech } from '../../Mock';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import Loader from '../Loader/Loader';
 
 
 function getItemsByCategoryFromDatabase (categoryURL) {
@@ -17,6 +18,7 @@ function getItemsByCategoryFromDatabase (categoryURL) {
 const ItemListContainer = ()=>{
 
   const [productos, setProductos] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
 
   const params = useParams ();
@@ -24,9 +26,13 @@ const ItemListContainer = ()=>{
 
   async function leerDatos() {
     if (idCategory === undefined) {
-      let respuesta = await listadoProductos; setProductos(respuesta);
+      let respuesta = await listadoProductos; 
+      setProductos(respuesta);
+      setIsLoading(false)
   } else {
-      let respuesta = await getItemsByCategoryFromDatabase(idCategory); setProductos(respuesta);
+      let respuesta = await getItemsByCategoryFromDatabase(idCategory); 
+      setProductos(respuesta);
+      setIsLoading(false);
   }
 }
 
@@ -36,11 +42,12 @@ const ItemListContainer = ()=>{
 
   return (
   
-    <div className=''>
+    <div>
       
       <h1 className='container'>Catálogo de Productos</h1>
       <div className='container'>
-        <ItemList Prod={productos} />
+        {isLoading? <Loader /> : 
+        <ItemList Prod={productos} /> }
       </div>
     </div>
   )
