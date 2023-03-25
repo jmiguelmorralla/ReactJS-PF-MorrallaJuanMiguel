@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import listadoProductos from "../../Mock";
 import ItemCount from '../ItemCount/ItemCount';
 import cartContext from '../../context/cartContext'
+import Loader from '../Loader/Loader';
 
 
 export default function ItemDetailContainer() {
@@ -26,16 +27,19 @@ function onAddToCart(count) {
 useEffect (()=>{
     const promesaItem = new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            let encontrado = listadoProductos.find((item) => item.id === parseInt(idProduct)); resolve(encontrado);
-        }, 1000)
+            let encontrado = listadoProductos.find((item) => item.id === parseInt(idProduct)); 
+            if(encontrado !== undefined) resolve(encontrado);
+            else reject("No se encontró el producto.");
+        }, 2000)
     });
 
     promesaItem.then((respuesta)=>setItem(respuesta));
+    promesaItem.catch((error) => alert ("Error."))
 
 
 }, []);
 
-
+if (item.nombre === undefined) return <Loader />;
 
   return (
     <div className="container">

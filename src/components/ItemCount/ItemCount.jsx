@@ -19,7 +19,7 @@ const ItemCount = ({inicial, stock, onAddToCart}) => {
 
 };
 
-console.log("valor "+count)
+
 return(
   <div className="adminCant">
     
