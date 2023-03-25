@@ -4,20 +4,18 @@ import Button from "../Button/Button";
 
 const ItemCount = ({inicial, stock, onAddToCart}) => {
   
-  let [count, setCount] = useState (inicial)  
+  const [count, setCount] = useState (inicial)  
 
   
-  let disminuir = () => {
+  const disminuir = () => {
     if (count > inicial) {
-  setCount (count --)
+  setCount (count - 1)
   }
   };
   
-  let incrementar = () => {
+  const incrementar = () => {
   if (count < stock) {  
-  setCount (count ++)}
-
-
+  setCount (count + 1)}
 
 };
 

@@ -7,13 +7,29 @@ const cartContext = createContext({
 function CartContextProvider(props) {
     const  [cart, setCart] = useState([]);
 
-    function addItem() {
+    function addItem (item, count) {
+        const newCart = [...cart];
+        item.count = count;
+        newCart.push(item)
         
+        setCart(newCart)
+    };
+
+    function removeItem(id) {
+
+    }
+
+    function clear () {
+
+    }
+
+    function getCountInCart () {
+
     }
 
 
     return (
-        <cartContext.Provider value={{cart: cart}}>
+        <cartContext.Provider value={{cart, addItem}}>
             {props.children}
         </cartContext.Provider>
     )
