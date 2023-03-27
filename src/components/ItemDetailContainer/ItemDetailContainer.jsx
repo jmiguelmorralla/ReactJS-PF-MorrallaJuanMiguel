@@ -7,6 +7,47 @@ import ItemCount from '../ItemCount/ItemCount';
 import cartContext from '../../context/cartContext'
 import Loader from '../Loader/Loader';
 
+// Configuración Firebase -----------------------------------------------------------
+
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAbBr5QGDOhK7GovGCrOY3mRLJOlqSPj2c",
+  authDomain: "reactproyectofinalmorrallajuan.firebaseapp.com",
+  projectId: "reactproyectofinalmorrallajuan",
+  storageBucket: "reactproyectofinalmorrallajuan.appspot.com",
+  messagingSenderId: "620829723264",
+  appId: "1:620829723264:web:c82a918562d93a33c93465"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app)
+
+// Configuración Firebase -----------------------------------------------------------
+
+
+async function getSingleItemFromDatabase(idItem) {
+    // referencia de la colección y del documento
+    const productsColectionRef = collection(db, "products");
+    const docRef = doc(productsColectionRef, idItem);
+  
+    // getDoc -> datos
+    const docSnapshot = await getDoc(docRef);
+  
+    // extra
+    if (docSnapshot.exists() === false) 
+      throw new Error("No existe el documento") 
+  
+    return { ...docSnapshot.data(), id: docSnapshot.id };
+}
+
+
+
 
 export default function ItemDetailContainer() {
 
@@ -22,6 +63,10 @@ function onAddToCart(count) {
   addItem(item, count);
 }
 
+
+function promesaItem() {
+    
+}
 
 useEffect (()=>{
     const promesaItem = new Promise((resolve, reject)=>{
