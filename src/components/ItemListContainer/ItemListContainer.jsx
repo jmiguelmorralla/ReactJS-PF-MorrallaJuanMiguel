@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import './styles.css';
-import listadoProductos, { getFech } from '../../Mock';
+import listadoProductos from '../../Mock';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import Loader from '../Loader/Loader';
@@ -37,6 +37,7 @@ async function getItemsFromDatabase() {
   return dataProducts;
 }
 
+
 async function getItemsByCategoryFromDatabase(categoryURL) {
   const productsColectionRef = collection(db, "products");
 
@@ -49,14 +50,6 @@ async function getItemsByCategoryFromDatabase(categoryURL) {
 }
 
 
-// function getItemsByCategoryFromDatabase (categoryURL) {
-//   return new Promise ((resolve, reject)=>{
-//     setTimeout(()=>{
-//       let productosFiltrados = listadoProductos.filter(item => item.category === categoryURL)
-//       resolve(productosFiltrados)
-//     }, 1000); 
-//   });
-// }
 
 const ItemListContainer = ()=>{
   const params = useParams ();
@@ -67,7 +60,7 @@ const ItemListContainer = ()=>{
 
   async function leerDatos() {
     if (idCategory === undefined) {
-      let respuesta = await listadoProductos; 
+      let respuesta = await getItemsFromDatabase; 
       setProductos(respuesta);
       setIsLoading(false)
   } else {
@@ -82,7 +75,7 @@ const ItemListContainer = ()=>{
 
   useEffect(()=>{
     leerDatos()
-  }, [idCategory])
+  }, [])
 
   return (
   
@@ -91,7 +84,7 @@ const ItemListContainer = ()=>{
       <h1 className='container'>Catálogo de Productos</h1>
       <div className='container'>
         {isLoading? <Loader /> : 
-        <ItemList Prod={productos} /> }
+        <ItemList Prod={listadoProductos} /> }
       </div>
     </div>
   )
