@@ -53,7 +53,7 @@ const [item, setItem] = useState([])
 const params = useParams()
 const idItem = params.idProducto;
 
-const {addItem, isInCart} = useContext (cartContext);
+const {addItem} = useContext (cartContext);
 
 function onAddToCart(count) {
   alert(`Agregaste ${count} ítems al carrito.`)
