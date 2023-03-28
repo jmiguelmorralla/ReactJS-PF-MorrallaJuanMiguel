@@ -1,8 +1,10 @@
 .CartWidget {
     justify-self: right;
     padding: 0.5rem;
+    fill: white;
     background-color: rgba(255,153,0,255);
     border-radius: 20%;
+    transform:skewX(-5deg);
     
   }
   

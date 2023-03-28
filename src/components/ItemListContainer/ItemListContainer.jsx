@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
 import './styles.css';
-import listadoProductos from '../../Mock';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import Loader from '../Loader/Loader';
@@ -60,7 +59,7 @@ const ItemListContainer = ()=>{
 
   async function leerDatos() {
     if (idCategory === undefined) {
-      let respuesta = await getItemsFromDatabase; 
+      let respuesta = await getItemsFromDatabase();
       setProductos(respuesta);
       setIsLoading(false)
   } else {
@@ -75,7 +74,7 @@ const ItemListContainer = ()=>{
 
   useEffect(()=>{
     leerDatos()
-  }, [])
+  }, [params])
 
   return (
   
@@ -84,7 +83,8 @@ const ItemListContainer = ()=>{
       <h1 className='container'>Catálogo de Productos</h1>
       <div className='container'>
         {isLoading? <Loader /> : 
-        <ItemList Prod={listadoProductos} /> }
+        <ItemList Prod={productos} />
+        }
       </div>
     </div>
   )

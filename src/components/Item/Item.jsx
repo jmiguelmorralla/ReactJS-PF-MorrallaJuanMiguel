@@ -22,7 +22,7 @@ const Item = ({prod}) => {
             </div>
             
             <Link to={`/items/${prod.id}`}>                
-                <Button color={"blue"}>Ver descripción</Button>
+                <Button color={"#a305f7"}>Ver descripción</Button>
 
             </Link>
         </div>

@@ -1,20 +1,18 @@
 import React, { useContext } from 'react';
 import './styles.css';
 import { useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
-import listadoProductos from "../../Mock";
+import { Link, useParams } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import cartContext from '../../context/cartContext'
 import Loader from '../Loader/Loader';
 
 // Configuración Firebase -----------------------------------------------------------
 
-import { collection, getDocs, query, where } from "firebase/firestore";
+
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getFirestore, collection, doc, getDoc } from "firebase/firestore";
+import Button from '../Button/Button';
 
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAbBr5QGDOhK7GovGCrOY3mRLJOlqSPj2c",
   authDomain: "reactproyectofinalmorrallajuan.firebaseapp.com",
@@ -24,11 +22,11 @@ const firebaseConfig = {
   appId: "1:620829723264:web:c82a918562d93a33c93465"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 // Configuración Firebase -----------------------------------------------------------
+
 
 
 async function getSingleItemFromDatabase(idItem) {
@@ -44,19 +42,18 @@ async function getSingleItemFromDatabase(idItem) {
       throw new Error("No existe el documento") 
   
     return { ...docSnapshot.data(), id: docSnapshot.id };
-}
+  }
 
 
 
-
-export default function ItemDetailContainer() {
+function ItemDetailContainer() {
 
 const [item, setItem] = useState([])
 
 const params = useParams()
-const idProduct = params.idProducto;
+const idItem = params.idProducto;
 
-const {addItem} = useContext (cartContext);
+const {addItem, isInCart} = useContext (cartContext);
 
 function onAddToCart(count) {
   alert(`Agregaste ${count} ítems al carrito.`)
@@ -64,22 +61,12 @@ function onAddToCart(count) {
 }
 
 
-function promesaItem() {
-    
-}
 
 useEffect (()=>{
-    const promesaItem = new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            let encontrado = listadoProductos.find((item) => item.id === parseInt(idProduct)); 
-            if(encontrado !== undefined) resolve(encontrado);
-            else reject("No se encontró el producto.");
-        }, 2000)
-    });
 
-    promesaItem.then((respuesta)=>setItem(respuesta));
-    promesaItem.catch((error) => alert ("Error."))
-
+    getSingleItemFromDatabase(idItem)
+    .then((respuesta)=>{setItem(respuesta)})
+    .catch((error) => alert ("Error."));
 
 }, []);
 
@@ -87,6 +74,8 @@ const precioOferta = ((100-item.oferta)*item.precio/100)
 
 
 if (item.nombre === undefined) return <Loader />;
+
+
 
   return (
     <div className="container">
@@ -118,7 +107,14 @@ if (item.nombre === undefined) return <Loader />;
                         ) : <h5>${item.precio}</h5>}
                 
             </div>
+         
             <ItemCount onAddToCart={onAddToCart} inicial={1} stock={item.stock} />
+            
+
+            {/* {()=>isInCart(item.id)? <Link to={`/cart`}>                
+                <Button color="orange">Ir al carrito</Button>
+                </Link>:
+            <ItemCount onAddToCart={onAddToCart} inicial={1} stock={item.stock} /> */}
             
 
         </div>
@@ -127,3 +123,4 @@ if (item.nombre === undefined) return <Loader />;
 }
 
 
+export default ItemDetailContainer;
