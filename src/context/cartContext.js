@@ -35,10 +35,11 @@ function CartContextProvider(props) {
         let total = 0;
         cart.forEach((item)=> total+item.count)
         return total;
+
     }
 
     function isInCart(id){
-        cart.some(item => item.id ===id)
+        return cart.some(item => item.id ===id)
     }
 
     return (
