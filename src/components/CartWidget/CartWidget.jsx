@@ -8,7 +8,7 @@ import cartContext from '../../context/cartContext';
 function CartWidget() {
 
   const {cart, getCountInCart} = useContext(cartContext)
-  const cartCount = getCountInCart(cart)
+  const cartCount = getCountInCart()
 
  
   return (
