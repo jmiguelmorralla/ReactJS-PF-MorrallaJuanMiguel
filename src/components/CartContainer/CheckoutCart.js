@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { createOrder } from '../../services/firestore'
 import { useContext } from 'react';
 import cartContext from '../../context/cartContext';
+import CheckoutForm from './CheckoutForm';
 
 
 
@@ -28,7 +29,7 @@ function CheckoutCart({cart, total}) {
     }
   return (
     <div>
-        <button color={"#a305f7"} onClick={handleCheckout}>Finalizar Compra</button>
+        <CheckoutForm onSubmit={handleCheckout} />
     </div>
   )
 }
