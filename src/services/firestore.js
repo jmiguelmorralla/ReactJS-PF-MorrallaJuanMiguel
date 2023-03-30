@@ -25,6 +25,7 @@ const db = getFirestore(app)
 export async function createOrder (orderData) {
  const collectionRef = collection(db, "orders");
  const response = await addDoc(collectionRef, orderData)
- console.log("orden Ok")
+
  return response.id
 }
+
