@@ -8,8 +8,8 @@ import CheckoutCart from "./CheckoutCart";
 import "./styles.css";
 
 function CartContainer() {
-  const { cart } = useContext(cartContext);
-    console.log(cart)
+  const { cart, getPriceInCart } = useContext(cartContext);
+
   return (
     <>
         {cart.length === 0? 
@@ -61,11 +61,11 @@ function CartContainer() {
 
 
             <div>
-                El total de tu compra es de $ --,--
+                El total de tu compra es de $$$$
             </div>
 
             <div className="checkout">
-                <CheckoutCart />
+                <CheckoutCart cart={cart} total={getPriceInCart()}/>
             </div>
         </div>
         }
