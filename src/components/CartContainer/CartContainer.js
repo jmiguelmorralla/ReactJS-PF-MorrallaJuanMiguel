@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import cartContext from "../../context/cartContext";
 import Button from "../Button/Button";
+import CheckoutCart from "./CheckoutCart";
 
 import "./styles.css";
 
@@ -62,8 +63,12 @@ function CartContainer() {
             <div>
                 El total de tu compra es de $ --,--
             </div>
+
+            <div className="checkout">
+                <CheckoutCart />
+            </div>
         </div>
-}
+        }
     </>
   );
 }
