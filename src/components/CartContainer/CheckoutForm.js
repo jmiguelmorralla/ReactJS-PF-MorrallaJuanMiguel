@@ -7,7 +7,7 @@ export default function CheckoutForm(props) {
     phone: "",
   });
 
-  console.log(userData);
+  
 
   function handleChange(evt) {
     const value = evt.target.value;
@@ -32,7 +32,7 @@ export default function CheckoutForm(props) {
 
   return (
     <form>
-      <h2>Completa tus datos para completar la compra🛍</h2>
+      <h2>Tus datos para completar la compra:</h2>
       <div style={{ display: "flex", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Nombre</label>
         <input

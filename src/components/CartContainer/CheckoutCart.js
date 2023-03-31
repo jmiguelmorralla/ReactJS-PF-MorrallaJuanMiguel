@@ -15,7 +15,7 @@ function CheckoutCart({cart, total}) {
 
     async function handleCheckout () {
       const orderData = {
-        buyer: {name: "Juan", phone: "233", email: "juan@gfs.com" },
+        buyer: {name: "Miguel", phone: "233", email: "juan@gfs.com" },
         items: cart,
         total: total,
         timestamp: new Date(),

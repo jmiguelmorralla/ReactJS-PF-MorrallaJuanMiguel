@@ -9,7 +9,6 @@ function CartWidget() {
 
   const {cart, cartQuantity} = useContext(cartContext)
   const cartCount = cartQuantity()
-  console.log(cartCount)
 
  
   return (
