@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 
 function CheckoutCart({cart, total}) {
 
-  const { clear } = useContext(cartContext);
+  const { clearCart } = useContext(cartContext);
 
     const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ function CheckoutCart({cart, total}) {
 
       navigate('/checkout/${id}')
 
-      
+      clearCart()
 
     }
   return (

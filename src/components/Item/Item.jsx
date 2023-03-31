@@ -12,7 +12,7 @@ const Item = ({prod}) => {
                     <h4>{prod.nombre}</h4>
                 </div>
                 <div>
-                    {prod.oferta && (
+                    {prod.oferta !==0 && (
                     <div className="oferta">¡En oferta!</div>
                     )}
                 </div>

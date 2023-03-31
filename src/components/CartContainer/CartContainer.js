@@ -35,8 +35,9 @@ function CartContainer() {
                     <th>Nombre</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
-                    <th>Eliminar</th>
+                    <th>Descuento</th>
                     <th>Total</th>
+                    <th>Eliminar</th>
                 </tr>
                 </thead>
 
@@ -49,10 +50,11 @@ function CartContainer() {
                     <td>{item.nombre}</td>
                     <td>${item.precio}</td>
                     <td>{item.count}</td>
+                    <td>{item.oferta}%</td>
+                    <th>$ {item.precio*item.count*(1-(item.oferta/100))}</th>
                     <td>
                         <button color="red" onClick={()=>removeItem(item.id)}>X</button>
                     </td>
-                    <th>$ {item.precio*item.count}</th>
                     </tr>
                 ))}
                 </tbody>

@@ -20,12 +20,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
+export const getApp = () => app;
+export const getDb = () => db;
+
+
+
 // Configuración Firebase -----------------------------------------------------------
 
 export async function createOrder (orderData) {
  const collectionRef = collection(db, "orders");
  const response = await addDoc(collectionRef, orderData)
 
- return console.log(response.id)
+ return response
 }
 

@@ -87,9 +87,9 @@ if (item.nombre === undefined) return <Loader />;
                     <h4>{item.nombre}</h4>
                 </div>
                     <div>
-                        {item.oferta && (
+                        {item.oferta > 0 ? (
                         <div className="oferta">¡En oferta!</div>
-                        )}
+                        ): ""}
                     </div>
             </div>
             <div>
