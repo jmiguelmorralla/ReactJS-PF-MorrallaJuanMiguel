@@ -39,7 +39,7 @@ export default function CheckoutForm(props) {
           value={userData.name}
           name="name"
           type="text"
-          required
+
           onChange={handleChange}
         />
       </div>
@@ -50,7 +50,7 @@ export default function CheckoutForm(props) {
           value={userData.email}
           name="email"
           type="email"
-          required
+ 
           onChange={handleChange}
         />
       </div>
@@ -61,7 +61,7 @@ export default function CheckoutForm(props) {
           value={userData.phone}
           name="phone"
           type="text"
-          required
+
           onChange={handleChange}
         />
       </div>

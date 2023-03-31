@@ -21,6 +21,7 @@ function CheckoutCart({cart, total}) {
         timestamp: new Date(),
       }
       const id = await createOrder(orderData)
+      
 
       navigate('/checkout/${id}')
 
