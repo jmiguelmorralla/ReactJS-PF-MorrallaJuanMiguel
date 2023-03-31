@@ -35,4 +35,4 @@ function CheckoutCart({cart, total}) {
   )
 }
 
-export default CheckoutCart
+export default CheckoutCart;

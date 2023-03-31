@@ -39,7 +39,7 @@ function CartContextProvider(props) {
     
 
       const getPriceInCart = () => {
-        return cart.reduce((acc, prod) => (acc += prod.precio), 0);
+        return cart.reduce((acc, prod) => (acc += prod.precio*prod.count), 0);
       }
 
     return (

@@ -60,8 +60,8 @@ function CartContainer() {
 
 
 
-            <div>
-                El total de tu compra es de ${getPriceInCart()}
+            <div className="checkout">
+                <h2>El total de tu compra es de ${getPriceInCart()}</h2>
             </div>
 
             <div className="checkout">

@@ -26,6 +26,7 @@ return(
     <Button color={"red"} onClickButton={disminuir}>-</Button>
     <span id='contador'>{count}</span>
     <Button color={"green"} onClickButton={incrementar}>+</Button>
+    <br />
     <Button color={"orange"} onClickButton={()=>onAddToCart(count)}>Agregar al carrito</Button>
   </div> 
 

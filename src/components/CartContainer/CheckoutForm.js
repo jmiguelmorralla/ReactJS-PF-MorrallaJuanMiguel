@@ -26,12 +26,13 @@ export default function CheckoutForm(props) {
     });
   }
 
-  function submitData(){
-    props.onSubmit(userData)
+function submitData(e){
+    e.preventDefault()
+    props.handleCheckout(userData)
   }
 
   return (
-    <form>
+    <form onSubmit={submitData}>
       <h2>Tus datos para completar la compra:</h2>
       <div style={{ display: "flex", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Nombre</label>
@@ -74,6 +75,7 @@ export default function CheckoutForm(props) {
           )
         }
         onClick={() =>props.onSubmit(userData)}
+        type="submit"
       >
         Finalizar Compra
       </button>
