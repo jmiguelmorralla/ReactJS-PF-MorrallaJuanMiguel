@@ -73,7 +73,7 @@ export default function CheckoutForm(props) {
             userData.email !== ""
           )
         }
-        onClick={submitData}
+        onClick={() =>props.onSubmit(userData)}
       >
         Finalizar Compra
       </button>

@@ -13,9 +13,9 @@ function CheckoutCart({cart, total}) {
 
     const navigate = useNavigate();
 
-    async function handleCheckout () {
+    async function handleCheckout (userData) {
       const orderData = {
-        buyer: {name: "Miguel", phone: "233", email: "juan@gfs.com" },
+        buyer: userData,
         items: cart,
         total: total,
         timestamp: new Date(),
