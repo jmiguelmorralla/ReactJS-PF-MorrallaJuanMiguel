@@ -6,7 +6,7 @@ function OrderChecked() {
 
   return (
     <div className="container checkout">
-        <h4>Gracias por tu compra. En unos minutos enviaremos tu orden de compra al e-mail declarado.</h4>
+        <h2>Gracias por tu compra. En unos minutos enviaremos tu orden de compra al e-mail declarado.</h2>
     </div>
   )
 }

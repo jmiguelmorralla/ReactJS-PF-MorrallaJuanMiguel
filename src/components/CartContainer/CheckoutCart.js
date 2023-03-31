@@ -31,6 +31,7 @@ function CheckoutCart({cart, total}) {
   return (
     <div>
         <CheckoutForm onSubmit={handleCheckout} />
+        {clearCart()}
     </div>
   )
 }

@@ -25,8 +25,9 @@ function CartContextProvider(props) {
             setCart([]);
         }
         
-    function isInCart(id){
-                return cart.some(item => item.id === id)
+    const isInCart = (id) => {
+      cart.some(item => item.id === id)
+           
             }
 
     const removeItem = (id) => setCart((cart.filter(item => item.id !== id)))

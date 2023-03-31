@@ -49,15 +49,17 @@ async function getSingleItemFromDatabase(idItem) {
 function ItemDetailContainer() {
 
 const [item, setItem] = useState([])
+const [compra, setCompra] = useState(false)
 
 const params = useParams()
 const idItem = params.idProducto;
 
-const {addItem} = useContext (cartContext);
+const {cart, addItem, isInCart} = useContext (cartContext);
 
 function onAddToCart(count) {
   alert(`Agregaste ${count} ítems al carrito.`)
   addItem(item, count);
+  setCompra(true)
 }
 
 
@@ -108,13 +110,14 @@ if (item.nombre === undefined) return <Loader />;
                 
             </div>
          
-            <ItemCount onAddToCart={onAddToCart} inicial={1} stock={item.stock} />
             
-
-            {/* {()=>isInCart(item.id)? <Link to={`/cart`}>                
+            
+            {compra? 
+              <Link to={`/cart`}>                
                 <Button color="orange">Ir al carrito</Button>
-                </Link>:
-            <ItemCount onAddToCart={onAddToCart} inicial={1} stock={item.stock} /> */}
+              </Link>
+              :
+              <ItemCount onAddToCart={onAddToCart} inicial={1} stock={item.stock} />}
             
 
         </div>
