@@ -25,6 +25,7 @@ function App() {
                 <Route path="/cart" element={<CartContainer />} />
                 <Route path="/checkout/:id" element={<OrderChecked />} />
                 <Route path="*" element={<NotFound />} />
+                
               </Routes>
           </BrowserRouter>
         </CartContextProvider>

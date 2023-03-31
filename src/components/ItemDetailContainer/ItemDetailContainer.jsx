@@ -3,7 +3,7 @@ import './styles.css';
 import { useState, useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
-import cartContext from '../../context/cartContext'
+import cartContext from '../../context/cartContext';
 import Loader from '../Loader/Loader';
 
 // Configuración Firebase -----------------------------------------------------------

@@ -8,7 +8,7 @@ import CheckoutCart from "./CheckoutCart";
 import "./styles.css";
 
 function CartContainer() {
-  const { cart, getPriceInCart } = useContext(cartContext);
+  const { cart, getPriceInCart, removeItem } = useContext(cartContext);
 
   return (
     <>
@@ -50,7 +50,7 @@ function CartContainer() {
                     <td>${item.precio}</td>
                     <td>{item.count}</td>
                     <td>
-                        <Button color="red">X</Button>
+                        <button color="red" onClick={()=>removeItem(item.id)}>X</button>
                     </td>
                     <th>$ {item.precio*item.count}</th>
                     </tr>
@@ -61,7 +61,7 @@ function CartContainer() {
 
 
             <div>
-                El total de tu compra es de $$$$
+                El total de tu compra es de ${getPriceInCart()}
             </div>
 
             <div className="checkout">

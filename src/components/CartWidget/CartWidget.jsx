@@ -1,5 +1,5 @@
 import './styles.css';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import cartContext from '../../context/cartContext';
 
 
@@ -7,8 +7,9 @@ import cartContext from '../../context/cartContext';
 
 function CartWidget() {
 
-  const {cart, getCountInCart} = useContext(cartContext)
-  const cartCount = getCountInCart()
+  const {cart, cartQuantity} = useContext(cartContext)
+  const cartCount = cartQuantity()
+  console.log(cartCount)
 
  
   return (

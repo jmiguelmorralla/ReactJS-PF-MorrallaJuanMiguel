@@ -56,7 +56,7 @@ export default function CheckoutForm(props) {
       </div>
 
       <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Phone</label>
+        <label style={{ width: "100px", marginRight: 4 }}>Teléfono</label>
         <input
           value={userData.phone}
           name="phone"
