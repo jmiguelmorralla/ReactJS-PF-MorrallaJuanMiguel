@@ -90,11 +90,12 @@
   }
 
   #contador {
-    margin: 1rem;
+    margin: 2rem;
   }
 
-  .adminCant {
+  .admin {
     display: flex;
- 
+    justify-content: center;
+
   }
   

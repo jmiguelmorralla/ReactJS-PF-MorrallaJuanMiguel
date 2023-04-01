@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import "./styles.css";
 
 export default function CheckoutForm(props) {
   const [userData, setUserData] = useState({
     name: "",
-    email: "",
+    surname: "",
     phone: "",
+    email: "",
+    remail: "",
   });
 
   
@@ -21,8 +24,10 @@ export default function CheckoutForm(props) {
   function clearForm() {
     setUserData({
       name: "",
-      email: "",
+      surname: "",
       phone: "",
+      email: "",
+      remail: "",
     });
   }
 
@@ -33,9 +38,10 @@ function submitData(e){
 
   return (
     <form onSubmit={submitData}>
-      <h2>Tus datos para completar la compra:</h2>
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Nombre</label>
+      <h2>Datos para completar la compra:</h2>
+
+      <div className="linea">
+        <label>Nombre</label>
         <input
           value={userData.name}
           name="name"
@@ -45,8 +51,28 @@ function submitData(e){
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Email</label>
+      <div className="linea">
+        <label>Apellido</label>
+        <input
+          value={userData.surname}
+          name="surname"
+          type="text"
+
+          onChange={handleChange}
+        />
+      </div>
+      <div className="linea">
+        <label>Teléfono</label>
+        <input
+          value={userData.phone}
+          name="phone"
+          type="text"
+
+          onChange={handleChange}
+        />
+      </div>
+      <div className="linea">
+        <label>E-mail</label>
         <input
           value={userData.email}
           name="email"
@@ -56,30 +82,44 @@ function submitData(e){
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Teléfono</label>
+      <div className="linea">
+        <label>Repetí tu e-mail.</label>
         <input
-          value={userData.phone}
-          name="phone"
-          type="text"
-
+          value={userData.remail}
+          name="remail"
+          type="email"
+          
+ 
           onChange={handleChange}
         />
       </div>
-      <button
+
+      {userData.email !== userData.remail?
+      <div style={{ display: "flex", marginBottom: 8 }}>
+       <p className="alerta">El e-mail debe coincidir para poder finalizar.</p>
+      </div>: ""}
+
+
+      <button className="button"
         disabled={
           !(
             userData.name !== "" &&
+            userData.surname !== "" &&
             userData.phone !== "" &&
-            userData.email !== ""
+            userData.email !== "" &&
+            userData.remail !== "" &&
+            userData.email === userData.remail  
           )
         }
+        
+        
+
         onClick={() =>props.onSubmit(userData)}
         type="submit"
-      >
+        >
         Finalizar Compra
       </button>
-      <button onClick={clearForm}>Limpiar Formulario</button>
+      <button className="button buttonLimpiar" onClick={clearForm}>Limpiar Formulario</button>
     </form>
   );
 }

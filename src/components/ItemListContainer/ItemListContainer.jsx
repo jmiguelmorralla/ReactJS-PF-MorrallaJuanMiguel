@@ -4,28 +4,9 @@ import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 
-
-// Configuración Firebase -----------------------------------------------------------
-
+import { db } from '../../services/firestore';
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAbBr5QGDOhK7GovGCrOY3mRLJOlqSPj2c",
-  authDomain: "reactproyectofinalmorrallajuan.firebaseapp.com",
-  projectId: "reactproyectofinalmorrallajuan",
-  storageBucket: "reactproyectofinalmorrallajuan.appspot.com",
-  messagingSenderId: "620829723264",
-  appId: "1:620829723264:web:c82a918562d93a33c93465"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
-
-// Configuración Firebase -----------------------------------------------------------
 
 async function getItemsFromDatabase() {
   const productsColectionRef = collection(db, "products");

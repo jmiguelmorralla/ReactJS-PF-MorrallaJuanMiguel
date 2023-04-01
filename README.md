@@ -5,6 +5,20 @@
 
 I´m Juan Miguel Morralla, a CODERHOUSE student. This is my first experience using REACT JS. I enjoyed it so much and I expect keep in learning.
 
+# Applied topics
+
+- Enviroment config,
+- JSX & transpiling,
+- Hooks,
+- Components,
+- Primises, asynchrony and MAP.
+- API´s,
+- Routing,
+- Events,
+- Context,
+- Rendering (different kind) and
+- Firebase.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
