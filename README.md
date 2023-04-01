@@ -1,5 +1,10 @@
 ![](http://i.imgur.com/y8g506n.png?1)
 
+
+# Hello! This is my React JS Final Project 
+
+I´m Juan Miguel Morralla, a CODERHOUSE student. This is my first experience using REACT JS. I enjoyed it so much and I expect keep in learning.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -71,9 +76,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
-
---------------------------
 
 
 
